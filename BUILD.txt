@@ -1,0 +1,1 @@
+This project intentionally omits Gradle wrapper binaries. Use a Gradle installation compatible with Fabric Loom 1.14, or generate the wrapper with: gradle wrapper --gradle-version 8.14.3
