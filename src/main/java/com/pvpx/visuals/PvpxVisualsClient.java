@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.Identifier;
 import net.minecraft.network.chat.Component;
 import org.lwjgl.glfw.GLFW;
 
@@ -20,18 +21,23 @@ public final class PvpxVisualsClient implements ClientModInitializer {
     private static KeyMapping menuKey;
 
     /*
-     * Minecraft 1.21.11 uses a KeyMapping.Category.
-     *
-     * Category.register() accepts a String in this version.
+     * Minecraft 1.21.11:
+     * KeyMapping.Category.register(String) is private.
+     * The public API accepts an Identifier.
      */
     private static final KeyMapping.Category PVPX_CATEGORY =
-            KeyMapping.Category.register("pvpx_visuals");
+            KeyMapping.Category.register(
+                    Identifier.fromNamespaceAndPath(
+                            MOD_ID,
+                            "visuals"
+                    )
+            );
 
     @Override
     public void onInitializeClient() {
 
         /*
-         * RIGHT SHIFT = OPEN VISUALS MENU
+         * RIGHT SHIFT = OPEN PVPX VISUALS MENU
          */
 
         menuKey = KeyBindingHelper.registerKeyBinding(
@@ -57,7 +63,7 @@ public final class PvpxVisualsClient implements ClientModInitializer {
             }
 
             /*
-             * Camera bobbing
+             * CAMERA BOBBING
              */
 
             if (client.options != null) {
@@ -67,7 +73,7 @@ public final class PvpxVisualsClient implements ClientModInitializer {
                 );
 
                 /*
-                 * FOV effects
+                 * FOV EFFECTS
                  */
 
                 client.options.screenEffectScale().set(
@@ -75,7 +81,7 @@ public final class PvpxVisualsClient implements ClientModInitializer {
                 );
 
                 /*
-                 * Fullbright
+                 * FULLBRIGHT
                  */
 
                 client.options.gamma().set(
@@ -87,7 +93,7 @@ public final class PvpxVisualsClient implements ClientModInitializer {
         });
 
         /*
-         * HUD RENDERING
+         * HUD
          */
 
         HudRenderCallback.EVENT.register(
@@ -125,11 +131,8 @@ public final class PvpxVisualsClient implements ClientModInitializer {
 
         if (CONFIG.crosshair) {
 
-            int centerX =
-                    width / 2;
-
-            int centerY =
-                    height / 2;
+            int centerX = width / 2;
+            int centerY = height / 2;
 
             int thickness =
                     Math.max(
