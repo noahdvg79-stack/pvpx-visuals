@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "pvpx_visuals",
+  "version": "${version}",
+  "name": "PvPX Visuals",
+  "description": "Clean, customizable PvP visuals with a Right Shift configuration menu.",
+  "authors": [
+    "PvPX"
+  ],
+  "contact": {
+    "sources": "https://example.com"
+  },
+  "license": "MIT",
+  "icon": "assets/pvpx_visuals/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.pvpx.visuals.PvpxVisualsClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "~1.21.11",
+    "fabric-api": "*",
+    "java": ">=21"
+  }
+}
