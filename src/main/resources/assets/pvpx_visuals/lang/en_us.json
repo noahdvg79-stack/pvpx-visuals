@@ -1,0 +1,22 @@
+{
+  "key.categories.pvpx_visuals": "PvPX Visuals",
+  "key.pvpx_visuals.open_menu": "Open PvPX Visuals Menu",
+  "screen.pvpx_visuals.title": "PvPX Visuals",
+  "screen.pvpx_visuals.crosshair": "Crosshair",
+  "screen.pvpx_visuals.visual_effects": "Visual Effects",
+  "screen.pvpx_visuals.hud": "HUD",
+  "screen.pvpx_visuals.enabled": "Enabled",
+  "screen.pvpx_visuals.disabled": "Disabled",
+  "screen.pvpx_visuals.fullbright": "Fullbright",
+  "screen.pvpx_visuals.damage_flash": "Damage Flash",
+  "screen.pvpx_visuals.camera_bob": "Camera Bobbing",
+  "screen.pvpx_visuals.fov_effects": "FOV Effects",
+  "screen.pvpx_visuals.particles": "Particles",
+  "screen.pvpx_visuals.watermark": "PvP Watermark",
+  "screen.pvpx_visuals.crosshair_size": "Crosshair Size",
+  "screen.pvpx_visuals.crosshair_gap": "Crosshair Gap",
+  "screen.pvpx_visuals.crosshair_thickness": "Crosshair Thickness",
+  "screen.pvpx_visuals.crosshair_color": "Crosshair Color",
+  "screen.pvpx_visuals.reset": "Reset",
+  "screen.pvpx_visuals.close": "Close"
+}
