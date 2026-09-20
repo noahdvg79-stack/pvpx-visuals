@@ -20,13 +20,12 @@ public final class PvpxVisualsClient implements ClientModInitializer {
     private static KeyMapping menuKey;
 
     /*
-     * Minecraft 1.21.11 uses a KeyMapping.Category
-     * instead of a String for the keybind category.
+     * Minecraft 1.21.11 uses a KeyMapping.Category.
+     *
+     * Category.register() accepts a String in this version.
      */
     private static final KeyMapping.Category PVPX_CATEGORY =
-            KeyMapping.Category.register(
-                    Component.translatable("key.categories.pvpx_visuals")
-            );
+            KeyMapping.Category.register("pvpx_visuals");
 
     @Override
     public void onInitializeClient() {
@@ -62,6 +61,7 @@ public final class PvpxVisualsClient implements ClientModInitializer {
              */
 
             if (client.options != null) {
+
                 client.options.bobView().set(
                         CONFIG.cameraBob
                 );
@@ -87,7 +87,7 @@ public final class PvpxVisualsClient implements ClientModInitializer {
         });
 
         /*
-         * HUD
+         * HUD RENDERING
          */
 
         HudRenderCallback.EVENT.register(
@@ -120,13 +120,16 @@ public final class PvpxVisualsClient implements ClientModInitializer {
                         .getGuiScaledHeight();
 
         /*
-         * CUSTOM CROSSHAIR
+         * CUSTOM PVP CROSSHAIR
          */
 
         if (CONFIG.crosshair) {
 
-            int centerX = width / 2;
-            int centerY = height / 2;
+            int centerX =
+                    width / 2;
+
+            int centerY =
+                    height / 2;
 
             int thickness =
                     Math.max(
