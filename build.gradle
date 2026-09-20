@@ -1,5 +1,5 @@
 plugins {
-    id 'net.fabricmc.fabric-loom-remap' version '1.14'
+    id 'net.fabricmc.fabric-loom-remap' version '1.14.10'
     id 'maven-publish'
 }
 
@@ -11,6 +11,8 @@ base {
 }
 
 repositories {
+    mavenCentral()
+    maven { url = uri("https://maven.fabricmc.net/") }
 }
 
 dependencies {
@@ -22,6 +24,7 @@ dependencies {
 
 processResources {
     inputs.property "version", project.version
+
     filesMatching("fabric.mod.json") {
         expand "version": project.version
     }
@@ -39,6 +42,7 @@ java {
 
 jar {
     inputs.property "archivesName", project.base.archivesName
+
     from("LICENSE") {
         rename { "${it}_${inputs.properties.archivesName}" }
     }
